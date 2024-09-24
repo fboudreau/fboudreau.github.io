@@ -4,15 +4,11 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+Linux is a great operating system for embedded devices. It's an appropriate
+choice for more devices as size and efficiency become better and better.
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
-
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
+This site is about learning embedded linux by building a distro from scratch
+and also by using build tools like [Buildroot](https://www.buildroot.org/),
+[Yocto](https://www.yoctoproject.org/) and [OpenWRT](https://openwrt.org/).
 
 
-[jekyll-organization]: https://github.com/jekyll
