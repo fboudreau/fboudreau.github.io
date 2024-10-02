@@ -1,0 +1,32 @@
+---
+layout: archive
+---
+
+<p>
+Embedded Linux means alot of things to many people. For the purpose of this
+site, it means the Linux kernel plus the root file-system that comprise a
+custom Linux distribution.
+</p>
+
+<p>
+Here, I document how a custom Linux distribution is put together and I build
+one from scratch without the use of build tools such as Buildroot or Yocto.
+</p>
+
+
+{{ content }}
+
+<h3 class="archive__subtitle">{{ site.data.ui-text[site.locale].recent_posts | default: "Recent Posts" }}</h3>
+
+{% if paginator %}
+  {% assign posts = paginator.posts %}
+{% else %}
+  {% assign posts = site.posts %}
+{% endif %}
+
+{% assign entries_layout = page.entries_layout | default: 'list' %}
+<div class="entries-{{ entries_layout }}">
+  {% include documents-collection.html entries=posts type=entries_layout %}
+</div>
+
+{% include paginator.html %}
