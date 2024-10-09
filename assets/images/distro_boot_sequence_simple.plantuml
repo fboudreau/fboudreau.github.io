@@ -1,0 +1,44 @@
+
+
+@startuml
+
+SOC -> "First Level\nBootloader" as first: start
+first -> first : Loads the user's bootloader\ninto limitted memory.
+note left 
+    The first level bootloader will run in the 
+    limitted amount of built-in memory of the 
+    SOC. It's purpose is to initialize the DDR, 
+    load the second level bootloader and start it.
+end note
+first -> "Second Level\nBootloader" as second: Start user bootloader.
+note left
+    The second level bootloader is responsible for 
+    loading the operating system (Linux kernel) into
+    the memory and starting it. This is where the 
+    kernel parameters are stored and passed on to the 
+    kernel when it is launched.
+end note
+
+second -> second: Load the Linux kernel into memory.
+second -> Kernel: Start the kernel.
+note right
+    Required parameters are passed 
+    to the kernel, including 
+    location of the RFS and the 
+    init program.
+end note
+
+Kernel -> Kernel: Initialize builtin drivers
+Kernel -> Kernel: Mount the root file system
+Kernel -> "Root File system" as RFS: Load and launch init program.
+note right
+    The kernel passes control to [[https://en.wikipedia.org/wiki/User_space_and_kernel_space User Space]]
+    via the init program. The init program's
+    responsibility is to initialize the services
+    and programs of the distribution.
+end note
+
+@enduml
+
+
+
